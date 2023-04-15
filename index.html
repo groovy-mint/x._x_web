@@ -1,0 +1,315 @@
+<html>
+<head>
+    <title>Smile Creative Lab.</title>
+    <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <style>
+        .mainSlide{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin: 5% 10%;
+        }
+        .slideInner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10%;
+            padding-right: 5%;
+        }
+        .slideTitle{
+            margin-top:0;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            word-break: keep-all;
+        }
+        .slideInnerMore{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slideInnerMoreButton{
+            padding:5px;
+            margin-top:10px;
+            cursor: pointer;
+            background: #00000000;
+            width: 200px;
+            padding: 10px;
+            border-radius: 50px;
+            border: 2px solid black;
+            transition: all 0.2s;
+        }
+        .slideInnerMoreButton:hover{
+            background: #000;
+            color:white
+        }
+        #mainSlide1{
+            background-color: white;
+            color: black;
+        }
+        .subSlideBox{
+            display: flex;
+            justify-content: space-between;
+            margin: 5% 10%;
+        }
+        .subSlide{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            width: 47%;
+        }
+        .subSlideMoreButton{
+            width:40px;
+            padding:5px;
+            margin-top:10px;
+            cursor: pointer;
+            background: #00000000;
+            padding: 10px;
+            border-radius: 50px;
+            border: 2px solid black;
+            transition: all 0.2s;
+        }
+        .subSlide:hover .subSlideMoreButton{
+            background: #000;
+            color:white
+        }
+        .slideInner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10%;
+            padding-right: 5%;
+        }
+        #subSlide1, #subSlide2{
+            background-color: white;
+            color: black;
+        }
+        .smilecreativelabtitle{
+            font-weight: 100;
+            font-style: normal;
+            position: fixed;
+            font-size: 2em;
+            bottom: 0;
+            left: 1em;
+        }
+        /* #subSlide1{
+            background: url(./sources/ccpattern.png);
+            background-size: 128px;
+        } */
+        @media screen and (max-width:899px){
+            .slideTitle{
+                font-size: 1.2em;
+                margin: 0;
+            }
+            .slideDesc{
+                margin: 0%;
+            }
+            .mainSlide{
+                width: 90%;
+                margin: 5%;
+            }
+            .subSlideBox{
+                margin: 5%;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function dropDownMobile(dir,where){
+    if(dir==true&&where=='login'){
+        $(".navbar li ."+where+"open").css({'display' : 'none'});
+        $(".navbar li ."+where+"close").css({'display' : 'block'});
+        $(".navbar .navmr li #"+where+"Menu").css({'-webkit-animation-name' : 'dropDownMenuDown', 'animation-name' : 'dropDownMenuDown', 'display' : 'block'});
+    }else if(dir==false&&where=='login'){
+        $(".navbar li ."+where+"open").css({'display' : 'block'});
+        $(".navbar li ."+where+"close").css({'display' : 'none'});
+        $(".navbar .navmr li #"+where+"Menu").css({'-webkit-animation-name' : 'dropDownMenuUp', 'animation-name' : 'dropDownMenuUp'});
+    }else if(dir==true&&(where=='main'||where=='user')){
+        $(".navbar li ."+where+"open").css({'display' : 'none'});
+        $(".navbar li ."+where+"close").css({'display' : 'block'});
+        menuCount=$("#"+where+"Menu li").length;
+        $("#"+where+"Menu").animate({ 'min-height' : (menuCount*50) }, 'fast');
+    }else if(dir==false&&(where=='main'||where=='user')){
+        $(".navbar li ."+where+"open").css({'display' : 'block'});
+        $(".navbar li ."+where+"close").css({'display' : 'none'});
+        $("#"+where+"Menu").animate({ 'min-height' : '0px' }, 'fast');
+    }
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navml">
+            <ul>
+                <li><a href="/" class="title">Smile Creative Lab.</a></li>
+            </ul>
+        </div>
+        <div class="navleft">
+            <ul>
+                <li><span class="title">Smile Creative Lab.</span></li>
+                <li><a href="/" class="nav-item"><i class="xi-home-o"></i><div> 홈</div></a></li>
+                <li><a href="/about" class="nav-item">소개</a></li>
+                <li><a href="/cotton_candy" class="nav-item"><i class="xi-cloud"></i><div> Cotton Candy</div></a></li>
+                <li><a href="/smile_typing" class="nav-item"><i class="xi-keyboard-o"></i><div> 스마일 타자연습</div></a></li>
+                <li><a href="/support" class="nav-item"><i class="xi-help-o"></i><div> 서포트</div></a></li>
+            </ul>
+        </div>
+        <div class="navright">
+            <ul>
+                <li><a href="#"><i class="xi-translate"></i> <i class="xi-caret-down-min"></i></a>
+                    <ul>
+                        <li><a href="/jp">日本語</a></li>
+                        <li><a href="/en">English</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="navmr">
+            <ul>
+                <li><a class="mainopen" href="javascript:void(0)" onclick="dropDownMobile(true,'main')"><i class="xi-bars"></i> 메뉴</a>
+                    <a class="mainclose" href="javascript:void(0)" onclick="dropDownMobile(false,'main')"><i class="xi-close"></i> 닫기</a>
+                    <ul id="mainMenu">
+                        <li><a href="/" class="nav-item"><i class="xi-home-o"></i> 홈</a></li>
+                        <li><a href="/about" class="nav-item">소개</a></li>
+                        <li><a href="/cotton_candy" class="nav-item"><i class="xi-cloud"></i> Cotton Candy</a></li>
+                        <li><a href="/smile_typing" class="nav-item"><i class="xi-keyboard-o"></i> 스마일 타자연습</a></li>
+                        <li><a href="/support" class="nav-item"><i class="xi-help-o"></i> 서포트</a></li>
+                        <li><a href="/jp"><i class="xi-translate"></i> 日本語</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div class="contentsBox">
+        
+    </div> -->
+    <div class="contentsBox">
+        <section>
+            <div class="titleBox">
+                <style>
+                    svg{max-width: 500px;margin: 50px;}
+                    .st2{stroke-dasharray: 1000;
+                      stroke-dashoffset: 0;
+                      animation: dash 2.1s ease-in-out alternate 1;
+                    }
+                    .st3{stroke-dasharray: 1000;
+                      stroke-dashoffset: 0;
+                      animation: dash1 3s ease-in-out alternate 1;
+                    }
+                    .st4{
+                      animation: dash2 0.3s ease-in-out alternate 1;
+                    }
+                    .st5{
+                      animation: dash3 2.5s ease-in-out alternate 1;
+                    }
+
+                    @keyframes dash {
+                      from {
+                        stroke-dashoffset: 1000;
+                      }
+                      50% {
+                        stroke-dashoffset: 1000;
+                      }
+                      to {
+                        stroke-dashoffset: 0;
+                      }
+                    }
+                    @keyframes dash1 {
+                      from {
+                        stroke-dashoffset: 1000;
+                      }
+                      35% {
+                        stroke-dashoffset: 1000;
+                      }
+                      to {
+                        stroke-dashoffset: 0;
+                      }
+                    }
+                    @keyframes dash2 {
+                      from {
+                        opacity: 0;
+                      }
+                      to {
+                        opacity: 1;
+                      }
+                    }
+                    @keyframes dash3 {
+                      from {
+                        opacity: 0;
+                      }
+                      75% {
+                        opacity: 0;
+                      }
+                      to {
+                        opacity: 1;
+                      }
+                    }
+                </style>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
+           <style type="text/css">
+               .st0{display:none;}
+               .st1{display:inline;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-miterlimit:10;}
+               .st2,.st3,.st4,.st5{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-linecap:round;stroke-miterlimit:10;}
+           </style>
+           <g id="레이어_1" class="st0">
+               <rect class="st1" width="2000" height="2000"/>
+           </g>
+           <g id="레이어_2">
+               <path class="st2" d="M1250,490.8c38.86,169.84,192.82,288.35,362.64,282.42c160.9-5.62,300.81-121.75,337.36-282.42"/>
+               <path class="st2" d="M50,490.8c38.86,169.84,192.82,288.35,362.64,282.42C573.54,767.59,713.45,651.47,750,490.8"/>
+               <path class="st3" d="M855.34,1007.97c17.17,75.05,85.2,127.42,160.25,124.8c71.1-2.49,132.93-53.8,149.08-124.8"/>
+               <circle class="st4" cx="1005" cy="850.73" r="5"/>
+               <line class="st5" x1="327.82" y1="988.24" x2="260.43" y2="1055.63"/>
+               <line class="st5" x1="433.69" y1="988.24" x2="366.31" y2="1055.63"/>
+               <line class="st5" x1="536.06" y1="988.24" x2="468.67" y2="1055.63"/>
+               <line class="st5" x1="1529.58" y1="988.24" x2="1462.19" y2="1055.63"/>
+               <line class="st5" x1="1635.45" y1="988.24" x2="1568.06" y2="1055.63"/>
+               <line class="st5" x1="1737.81" y1="988.24" x2="1670.42" y2="1055.63"/>
+           </g>
+           </svg>
+           
+                <!-- <p class="mainTitle">어서오세요!</p> -->
+                <p class="smilecreativelabtitle">Smile Creative Lab.</p>
+            </div>
+            <!-- <article class="mainSlideBox">
+                <div class="mainSlide" id="mainSlide1">
+                    <div class="slideInner">
+                        <p class="slideTitle">Smile Creative Lab에 어서오세요!</p>
+                        <p class="slideDesc">저희는 무궁무진한 상상력을 동원해서 밤낮없이 열심히 창작합니다.</p>
+                        <button class="slideInnerMoreButton" onclick="javascript:location.href='/about'">더 알아보기 <i class="xi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </article>
+            <article class="subSlideBox">
+                <div class="subSlide" id="subSlide1" onclick="javascript:location.href='/cotton_candy'">
+                    <div class="slideInner">
+                        <p class="slideTitle">Cotton Candy</p>
+                        <p class="slideDesc">학급 관리를 도와줄 맛있는 친구</p>
+                        <button class="subSlideMoreButton"><i class="xi-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="subSlide" id="subSlide2" onclick="javascript:location.href='/smile_typing'">
+                    <div class="slideInner">
+                        <p class="slideTitle">스마일 타자연습</p>
+                        <p class="slideDesc">이쁘게 웃으면서 타자연습해요</p>
+                        <button class="subSlideMoreButton"><i class="xi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </article> -->
+        </section>
+    </div>
+    <!-- <footer>
+        <div>
+            <p>Smile Creative Lab. 2021</p>
+            <p>Contact us: support@ntws.kr</p>
+        </div>
+        <div>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+        </div>
+    </footer> -->
+</body>
+</html>
