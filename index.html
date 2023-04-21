@@ -50,18 +50,17 @@ margin-bottom: 35px;
                       stroke-dashoffset: 0;
                       animation: dash1 2.1s ease-in alternate 1;
                     }
-                    .st4{
-                      animation: dash2 0.3s ease-in alternate 1;
+                    .st3{
+                      stroke-dasharray: 1000;
+                      stroke-dashoffset: 0;
+                      animation: dash3 2.1s ease-in alternate 1;
                     }
-                    .st5{
-                      animation: dash3 2.5s ease-in alternate 1;
+                    .st4{
+                      animation: dash2 2.1s ease-in alternate 1;
                     }
 
                     @keyframes dash {
                       from {
-                        stroke-dashoffset: 1000;
-                      }
-                      50% {
                         stroke-dashoffset: 1000;
                       }
                       to {
@@ -72,7 +71,7 @@ margin-bottom: 35px;
                       from {
                         stroke-dashoffset: 1000;
                       }
-                      35% {
+                      25%{
                         stroke-dashoffset: 1000;
                       }
                       to {
@@ -83,19 +82,25 @@ margin-bottom: 35px;
                       from {
                         opacity: 0;
                       }
+                      50%{
+                        opacity: 0;
+                      }
+                      63%{
+                        opacity: 1;
+                      }
                       to {
                         opacity: 1;
                       }
                     }
                     @keyframes dash3 {
                       from {
-                        opacity: 0;
+                        stroke-dashoffset: 1000;
                       }
                       75% {
-                        opacity: 0;
+                        stroke-dashoffset: 1000;
                       }
                       to {
-                        opacity: 1;
+                        stroke-dashoffset: 0;
                       }
                     }
                 </style>
@@ -115,7 +120,8 @@ margin-bottom: 35px;
                <line class="st2" x1="75" y1="170" x2="200" y2="295"/>
                <line class="st1" x1="425" y1="170" x2="300" y2="295"/>
                <line class="st2" x1="300" y1="170" x2="425" y2="295"/>
-               </g>
+               <line class="st3" x1="240" y1="325" x2="285" y2="325"/>
+              </g>
           </svg>
            <p class="p12">It's me, Uh_2_X._X</p>
            <p>자세히 알아보려면 밑으로 스크롤</p>
