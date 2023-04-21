@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <style>
-        .white{
-            background: white;
-            color: black;
+			hr{
+            width:100px;
+            border: 1px solid black;
+margin-bottom: 35px;
         }
+        .black{
+            background: black;
+            color: white;
+        }
+			.top{
+				padding-bottom:0;
+			}
+			.introBox{
+				padding: 50px 7%;
+			}
+			.textCenter{
+				text-align:center;
+			}
         .p2{
             font-size: 2em;
         }
@@ -19,142 +33,11 @@
         .p12{
             font-size: 1.2em;
         }
-        .mainSlide{
-            display: flex;
-            flex-direction: row;
-            width: 80%;
-            margin: 5% 10%;
-        }
-        .slideInner{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10%;
-            padding-right: 5%;
-        }
-        .slideTitle{
-            margin-top:0;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            word-break: keep-all;
-        }
-        .slideInnerMore{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .slideInnerMoreButton{
-            padding:5px;
-            margin-top:10px;
-            cursor: pointer;
-            background: #00000000;
-            width: 200px;
-            padding: 10px;
-            border-radius: 50px;
-            border: 2px solid black;
-            transition: all 0.2s;
-        }
-        .slideInnerMoreButton:hover{
-            background: #000;
-            color:white
-        }
-        #mainSlide1{
-            background-color: white;
-            color: black;
-        }
-        .subSlideBox{
-            display: flex;
-            justify-content: space-between;
-            margin: 5% 10%;
-        }
-        .subSlide{
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            background-color: white;
-            width: 47%;
-        }
-        .subSlideMoreButton{
-            width:40px;
-            padding:5px;
-            margin-top:10px;
-            cursor: pointer;
-            background: #00000000;
-            padding: 10px;
-            border-radius: 50px;
-            border: 2px solid black;
-            transition: all 0.2s;
-        }
-        .subSlide:hover .subSlideMoreButton{
-            background: #000;
-            color:white
-        }
-        .slideInner{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10%;
-            padding-right: 5%;
-        }
-        #subSlide1, #subSlide2{
-            background-color: white;
-            color: black;
-        }
-        .smilecreativelabtitle{
-            font-weight: 100;
-            font-style: normal;
-            position: fixed;
-            font-size: 2em;
-            bottom: 0;
-            left: 1em;
-        }
-        /* #subSlide1{
-            background: url(./sources/ccpattern.png);
-            background-size: 128px;
-        } */
-        @media screen and (max-width:899px){
-            .slideTitle{
-                font-size: 1.2em;
-                margin: 0;
-            }
-            .slideDesc{
-                margin: 0%;
-            }
-            .mainSlide{
-                width: 90%;
-                margin: 5%;
-            }
-            .subSlideBox{
-                margin: 5%;
-            }
-        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-        function dropDownMobile(dir,where){
-    if(dir==true&&where=='login'){
-        $(".navbar li ."+where+"open").css({'display' : 'none'});
-        $(".navbar li ."+where+"close").css({'display' : 'block'});
-        $(".navbar .navmr li #"+where+"Menu").css({'-webkit-animation-name' : 'dropDownMenuDown', 'animation-name' : 'dropDownMenuDown', 'display' : 'block'});
-    }else if(dir==false&&where=='login'){
-        $(".navbar li ."+where+"open").css({'display' : 'block'});
-        $(".navbar li ."+where+"close").css({'display' : 'none'});
-        $(".navbar .navmr li #"+where+"Menu").css({'-webkit-animation-name' : 'dropDownMenuUp', 'animation-name' : 'dropDownMenuUp'});
-    }else if(dir==true&&(where=='main'||where=='user')){
-        $(".navbar li ."+where+"open").css({'display' : 'none'});
-        $(".navbar li ."+where+"close").css({'display' : 'block'});
-        menuCount=$("#"+where+"Menu li").length;
-        $("#"+where+"Menu").animate({ 'min-height' : (menuCount*50) }, 'fast');
-    }else if(dir==false&&(where=='main'||where=='user')){
-        $(".navbar li ."+where+"open").css({'display' : 'block'});
-        $(".navbar li ."+where+"close").css({'display' : 'none'});
-        $("#"+where+"Menu").animate({ 'min-height' : '0px' }, 'fast');
-    }
-}
-    </script>
 </head>
 <body>
-    <div class="contentsBox">
+    <div class="contentsBox black top">
         <section>
             <div class="titleBox">
                 <style>
@@ -242,44 +125,24 @@
            <p class="p12">It's me, Uh_2_X._X</p>
            <p>자세히 알아보려면 밑으로 스크롤</p>
                     <i class="xi-angle-down"></i>
-                <!-- <p class="mainTitle">어서오세요!</p> -->
             </div>
-            <!-- <article class="mainSlideBox">
-                <div class="mainSlide" id="mainSlide1">
-                    <div class="slideInner">
-                        <p class="slideTitle">Smile Creative Lab에 어서오세요!</p>
-                        <p class="slideDesc">저희는 무궁무진한 상상력을 동원해서 밤낮없이 열심히 창작합니다.</p>
-                        <button class="slideInnerMoreButton" onclick="javascript:location.href='/about'">더 알아보기 <i class="xi-arrow-right"></i></button>
-                    </div>
-                </div>
-            </article>
-            <article class="subSlideBox">
-                <div class="subSlide" id="subSlide1" onclick="javascript:location.href='/cotton_candy'">
-                    <div class="slideInner">
-                        <p class="slideTitle">Cotton Candy</p>
-                        <p class="slideDesc">학급 관리를 도와줄 맛있는 친구</p>
-                        <button class="subSlideMoreButton"><i class="xi-arrow-right"></i></button>
-                    </div>
-                </div>
-                <div class="subSlide" id="subSlide2" onclick="javascript:location.href='/smile_typing'">
-                    <div class="slideInner">
-                        <p class="slideTitle">스마일 타자연습</p>
-                        <p class="slideDesc">이쁘게 웃으면서 타자연습해요</p>
-                        <button class="subSlideMoreButton"><i class="xi-arrow-right"></i></button>
-                    </div>
-                </div>
-            </article> -->
         </section>
     </div>
-    <div class="contentsBox white">
-        <span class="p15">Uh_2_X._X</span><br>
-        <span class="p12">한글로 「어이없음」</span>
-        <p>여기에 자기소개 입력</p>
+    <div class="contentsBox introBox">
+		<section>
+        <p class="textCenter"><span class="p2">Uh_2_X._X</span><br>
+        <span class="p12">[어이 없음]</span></p>
+        <p class="p15 textCenter">링크 모음집</p><hr>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//sclab.ntws.kr"> Smile Creative Lab</a></p>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//ntws.kr"> NTWS.KR</a></p>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//twitter.com/uh_1_34567890?s=21&t=N3g8VObhX2vF5Aq4WqdvIA"> Twitter</a></p>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//instagram.com/uh_2_x._x?igshid=YmMyMTA2M2Y="> Instagram</a></p>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//blog.ntws.kr/"> Tistory</a></p>
+			</section>
     </div>
     <footer>
         <div>
             <p>DO NOT FEEL ANYTHING.</p>
-            <p>Instagram: @uh_2_x._x</p>
         </div>
         <div>
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
