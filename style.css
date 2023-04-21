@@ -13,6 +13,9 @@
 html{
 	scroll-behavior: smooth;
 }
+a{
+	text-decoration: underline;
+}
 a:hover{
 	text-decoration: none;
 }
@@ -24,7 +27,12 @@ a:link{
 }
 ::selection{color:mediumaquamarine}
 body{margin:0; background: black;color:white;}
-.contentsBox{padding-top: 50px}
+.contentsBox{
+            color: black;
+            background:white;
+				padding-top: 50px;
+				padding-bottom: 50px;
+        }
 .titleBox{
 	display: flex;
 	flex-direction: column;
