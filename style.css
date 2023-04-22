@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans+KR');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
-@font-face{
-	font-family: Dunggeunmo;
-	src: url('./DungGeunMo.woff2') format('woff2'),
-		 url('./DungGeunMo.woff') format('woff');
-}
-@font-face{
-	font-family: Dossaemmul;
-	src: url('./DOSSaemmul.woff') format('woff');
-}
-*{font-family:'Noto Sans KR';outline: none;}
+*{font-family:'SUIT Variable', sans-serif;outline: none;}
 html{
 	scroll-behavior: smooth;
 }
