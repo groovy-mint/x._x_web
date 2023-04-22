@@ -18,18 +18,49 @@ margin-bottom: 35px;
 			.top{
 				padding-bottom:0;
 			}
+			.profilePic{
+				border-radius:100%;
+			}
+			.contentsBox{
+			display:flex;
+			justify-content:center;
+				word-break:keep-all;
+			}
+			.contentsWrap{
+			margin:100px 0;
+			max-width:750px;
+			}
 			.introBox{
 				padding: 50px 7%;
 			}
+			.imageBox{
+				width:100%;
+				text-align:center;
+			}
+			.imageBox>img{
+				max-width:500px;
+				width:100%;
+				
+				object-fit:cover;
+			}
 			.linkBox{
 			min-width:300px;
+			max-width:500px;
+			width:100%
 			}
 			.linkContainer{
 				display:flex;
-				justify-content:center;
+				flex-direction:column;
+				align-items:center;
 			}
 			.textCenter{
 				text-align:center;
+			}
+			.textBold{
+				font-weight:bold;
+			}
+			.p3{
+				font-size:3em;
 			}
         .p2{
             font-size: 2em;
@@ -48,7 +79,8 @@ margin-bottom: 35px;
         <section>
             <div class="titleBox">
                 <style>
-                    svg{max-width:500px;margin: 50px;}
+                    svg{width:80%;
+max-width:500px;margin: 50px;}
                     .st1{stroke-dasharray: 500;
                       stroke-dashoffset: 0;
                       animation: dash 2s ease-in alternate 1;
@@ -138,18 +170,77 @@ margin-bottom: 35px;
     </div>
     <div class="contentsBox introBox">
 		<section>
+			<article class="contentsWrap">
+			<p class="textCenter"><img src="./sources/profile.png" class="profilePic"></p>
         <p class="p2 textCenter">Uh_2_X._X</p>
-        <p class="p12 textCenter">[어이 없음]</p>
-<p class="textCenter">지금은 사이트 준비중이에요.
+        <p class="p12 textCenter">[어이없음]</p>
+</article>
+<article class="contentsWrap">
+<script>
+			function counter(){
+    var dday = new Date("Feb 29,2024,12:00:00").getTime(); //디데이
+	setInterval(function(){
+		var now = new Date(); //현재 날짜 가져오기
+		var distance = dday - now;
+		var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var s = Math.floor((distance % (1000 * 60)) / 1000);
+		if(s < 10){
+			s = '0'+s;
+		}
+		$('#draftTime').html(d+'일 '+h+'시간 '+m+'분 '+s+'초')
+	}, 1000);
+}
+counter();
+		</script>
+			<p class="p15 textCenter">이 사람이 🪖에서 돌아오기까지</p>
+			<hr>
+    <p class="textCenter textBold p12" id="draftTime">계산 중...</p>
+</article>
+<article class="contentsWrap">
+	<h1 class="textCenter p15">😊 관심있는 것들</h1><hr>
+	<h2>1. 철도 차량</h2>
+	<p>다섯 살 때부터 지금까지 끊임없이 좋아했던 것이에요! 각 열차마다 매력이 엄청나죠..! 😊 옛날 차 새로운 차 모두 좋아한답니다 😌</p>
+	<h2>2. 그림 그리기</h2>
+	<p>때는 중학교 1학년.. 캐치마인드를 하기 위해 구매한 타블렛으로 할 수 있는 생산적인 것이 무엇이 있을까.. 하고 고민하다가 그림을 그리게 됐어요!</p>
+	<div class="imageBox"><img src="./sources/drawing.png"></div>
+	<p>실력이 썩 좋은 편은 아니지만.. 의외로 좋아해주시는 분들이 많아서(!) 제 그림을 좋아해주시는 분들에게 정말 고맙게 생각하면서 가능한 꾸준히 그리고있어요! 🥹 보통은 그리고 싶은 대로 그리고.. 선물도 가끔 해드린답니다..ㅎㅎ</p>
+	<h2>3. IT 기기</h2>
+	<div class="imageBox"><img src="./sources/it.png"></div>
+	<p>각종 IT 기기(홍대병 다량 함유) 및 테크에 관심이 있어요! 디자인이 예쁜 기기들을 좋아해요.</p>
+	<h2>4. 프론트엔드</h2>
+	<p>프론트엔드도 쬐끔 만질 줄 안답니다..!
+<br>
+다만 실력은 보장 못하고 그냥 할 줄 안다! 주변에서 칭찬받는다 수준..🥲
+<br>
++ 제가 만든 타자연습은 모르는 새에 모르는 컴퓨터 강사가 널리 퍼트리고 있더라구요ㅋㅋ..</p>
+	<h2>5. 닌텐도</h2>
+	<p>닌텐도 게임, 특히나 모노리스 소프트와 노가미 히사시가 맡은 게임들(젤다, 동숲, 스플래툰, etc..)을 좋아해요. 친구 코드는 언제든지 드릴 수 있어요! 사정 상 받는 데에는 시간이 좀 걸릴거에요..! 🥺</p>
+</article>
+<article class="contentsWrap">
+	<h1 class="textCenter p15">☹️ 싫어하는 것들</h1><hr>
+	<h2>1. 뜬금 없는 반말</h2>
+	<p>저를 어디서 봤다고.. 다짜고짜 초면에 반말을 하시는 분들이 계셔서.. 그 뒤로는 별로 좋아하지 않고 있어요. 친하고 나이만 비슷하면 언제든 반말을 상의할 수 있어요! 😇</p>
+	<h2>2. 원색적 비난</h2>
+	<p></p>
+	<h2>3. 두서 없는 음담패설</h2>
+	<p></p>
+	<h2>4. 지나친 신앙 및 찬양 강요</h2>
+	<p></p>
+	<h2>5. 가지무침</h2>
+	<p></p>
+</article>
+<p class="textCenter">NO MORE PASSION.
 </p>
 <div class="linkContainer">
 <div class="linkBox">
         <p class="p15 textCenter">링크 모음집</p><hr>
 			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//sclab.ntws.kr"> Smile Creative Lab</a></p>
 			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//ntws.kr"> NTWS.KR</a></p>
-			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//twitter.com/uh_1_34567890?s=21&t=N3g8VObhX2vF5Aq4WqdvIA"> Twitter</a></p>
-			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//instagram.com/uh_2_x._x?igshid=YmMyMTA2M2Y="> Instagram</a></p>
-			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//blog.ntws.kr/"> Tistory</a></p>
+			<p><i class="xi-angle-right-min"></i> <a class="p12" href="//blog.ntws.kr/"> The First Paradise</a></p>
+			<p><i class="xi-twitter"></i> <a class="p12" href="//twitter.com/uh_1_34567890?s=21&t=N3g8VObhX2vF5Aq4WqdvIA"> Twitter</a></p>
+			<p><i class="xi-instagram"></i> <a class="p12" href="//instagram.com/uh_2_x._x?igshid=YmMyMTA2M2Y="> Instagram</a></p>
 			</div></div>
 			</section>
     </div>
