@@ -202,7 +202,11 @@ max-width:500px;margin: 50px;}
 		if(s < 10){
 			s = '0'+s;
 		}
-		$('#draftTime').html(d+'일 '+h+'시간 '+m+'분 '+s+'초')
+        if(distance<0){
+            $('#draftTime').html('복무를 마치고 집에 욌어요!')
+            } else {
+                $('#draftTime').html(d+'일 '+h+'시간 '+m+'분 '+s+'초')
+                }
 	}, 1000);
 }
 counter();
