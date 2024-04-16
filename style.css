@@ -14,7 +14,8 @@ a:visited{
 a:link{
 	color: black;
 }
-::selection{color:mediumaquamarine}
+::selection{background-color: black;color:white;}
+.black ::selection{background-color: white;color:black;}
 body{margin:0; background: black;color:white;}
 .contentsBox{
             color: black;
