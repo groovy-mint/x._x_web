@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0>
     <meta name="description" content="X._X's Personal website which contains some links and introdutions.">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet"> 
     <style>
     		* {font-family: 'SUIT Variable', sans-serif;}
@@ -54,153 +54,154 @@
 <body>
     <div class="contentsBox black top">
         <section>
-            <div class="titleBox">
-                <style>
-                    svg{width:80%;margin: 50px;margin-bottom:0;}
-                    .st1{stroke-dasharray: 500;
+          <div class="titleBox">
+              <style>
+                  svg{width:80%;margin: 50px;margin-bottom:0;}
+                  .st1{stroke-dasharray: 500;
+                    stroke-dashoffset: 0;
+                    animation: dash 2s ease-in alternate 1;
+                  }
+                  .st2{stroke-dasharray: 500;
+                    stroke-dashoffset: 0;
+                    animation: dash1 2s ease-in alternate 1;
+                  }
+                  .st3{
+                    stroke-dasharray: 500;
+                    stroke-dashoffset: 0;
+                    animation: dash3 2s ease-in alternate 1;
+                  }
+                  .st4{
+                    animation: dash2 2s ease-out alternate 1;
+                  }
+                  .st5{
+                    animation: dash4 2.7s ease-in alternate 1;
+                  }
+                  .st6{
+                    animation: dash5 2.7s ease-in alternate 1;
+                  }
+                  .st7{
+                    animation: dash6 2.7s ease-in alternate 1;
+                  }
+
+                  @keyframes dash {
+                    from {
+                      stroke-dashoffset: 500;
+                    }
+                    to {
                       stroke-dashoffset: 0;
-                      animation: dash 2s ease-in alternate 1;
                     }
-                    .st2{stroke-dasharray: 500;
+                  }
+                  @keyframes dash1 {
+                    from {
+                      stroke-dashoffset: 500;
+                    }
+                    25%{
+                      stroke-dashoffset: 500;
+                    }
+                    to {
                       stroke-dashoffset: 0;
-                      animation: dash1 2s ease-in alternate 1;
                     }
-                    .st3{
-                      stroke-dasharray: 500;
+                  }
+                  @keyframes dash2 {
+                    from {
+                      opacity: 0;
+                    }
+                    65%{
+                      opacity: 0;
+                    }
+                    77%{
+                      opacity: 1;
+                    }
+                    to {
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes dash3 {
+                    from {
+                      stroke-dashoffset: 500;
+                    }
+                    80% {
+                      stroke-dashoffset: 500;
+                    }
+                    to {
                       stroke-dashoffset: 0;
-                      animation: dash3 2s ease-in alternate 1;
                     }
-                    .st4{
-                      animation: dash2 2s ease-out alternate 1;
+                  }
+                  @keyframes dash4 {
+                    from {
+                      opacity: 0;
                     }
-                    .st5{
-                      animation: dash4 2.7s ease-in alternate 1;
+                    70% {
+                      opacity: 0;
                     }
-                    .st6{
-                      animation: dash5 2.7s ease-in alternate 1;
+                    80% {
+                      opacity: 1;
                     }
-                    .st7{
-                      animation: dash6 2.7s ease-in alternate 1;
+                    to {
+                      opacity: 1;
                     }
 
-                    @keyframes dash {
-                      from {
-                        stroke-dashoffset: 500;
-                      }
-                      to {
-                        stroke-dashoffset: 0;
-                      }
+                  }
+                  @keyframes dash5 {
+                    from {
+                      opacity: 0;
                     }
-                    @keyframes dash1 {
-                      from {
-                        stroke-dashoffset: 500;
-                      }
-                      25%{
-                        stroke-dashoffset: 500;
-                      }
-                      to {
-                        stroke-dashoffset: 0;
-                      }
+                    80% {
+                      opacity: 0;
                     }
-                    @keyframes dash2 {
-                      from {
-                        opacity: 0;
-                      }
-                      65%{
-                        opacity: 0;
-                      }
-                      77%{
-                        opacity: 1;
-                      }
-                      to {
-                        opacity: 1;
-                      }
+                    90% {
+                      opacity: 1;
                     }
-                    @keyframes dash3 {
-                      from {
-                        stroke-dashoffset: 500;
-                      }
-                      80% {
-                        stroke-dashoffset: 500;
-                      }
-                      to {
-                        stroke-dashoffset: 0;
-                      }
+                    to {
+                      opacity: 1;
                     }
-                    @keyframes dash4 {
-                      from {
-                        opacity: 0;
-                      }
-                      70% {
-                        opacity: 0;
-                      }
-                      80% {
-                        opacity: 1;
-                      }
-                      to {
-                        opacity: 1;
-                      }
 
+                  }
+                  @keyframes dash6 {
+                    from {
+                      opacity: 0;
                     }
-                    @keyframes dash5 {
-                      from {
-                        opacity: 0;
-                      }
-                      80% {
-                        opacity: 0;
-                      }
-                      90% {
-                        opacity: 1;
-                      }
-                      to {
-                        opacity: 1;
-                      }
+                    90% {
+                      opacity: 0;
+                    }
+                    to {
+                      opacity: 1;
+                    }
 
-                    }
-                    @keyframes dash6 {
-                      from {
-                        opacity: 0;
-                      }
-                      90% {
-                        opacity: 0;
-                      }
-                      to {
-                        opacity: 1;
-                      }
-
-                    }
-                </style>
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
-           <style type="text/css">
-               .st0{display:none;}
-               /*.st1{display:inline;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-miterlimit:10;}*/
-               .st1,.st2,.st3,.st4,.st5{fill:#ffffff;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
-           </style>
-           <g id="레이어_1" class="st0">
-               <rect class="st1" width="500" height="500"/>
-           </g>
-           <g id="레이어_2">
-               <circle class="st4" cx="222.5" cy="307.5" r="1"/>
-               <line class="st1" x1="200" y1="170" x2="75" y2="295"/>
-               <line class="st2" x1="75" y1="170" x2="200" y2="295"/>
-               <line class="st1" x1="425" y1="170" x2="300" y2="295"/>
-               <line class="st2" x1="300" y1="170" x2="425" y2="295"/>
-               <line class="st3" x1="240" y1="325" x2="285" y2="325"/>
-              </g>
-          </svg>
-           <div class="st5 fastlink">
-            <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Blog</span><button onclick="location.href='https://blog.x-x.place/'" class="fastLinkBtn" aria-label="Blog Link"><i class="fa-solid fa-pen-nib"></i></button></div>
-            <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Github</span><button onclick="location.href='//github.com/groovy-mint'" class="fastLinkBtn" aria-label="Github Link"><i class="fa-brands fa-github"></i></button></div>
-            <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Twitter</span><button onclick="location.href='//twitter.com/D34DF4C3_X_X'" class="fastLinkBtn" aria-label="Twitter Link"><i class="fa-brands fa-twitter"></i></button></div>
-            <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Instagram</span><button onclick="location.href='//instagram.com/uh_2_x._x/'" class="fastLinkBtn" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></button></div>
+                  }
+                  .material-symbols-outlined{font-size:1em;}
+              </style>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+         <style type="text/css">
+             .st0{display:none;}
+             /*.st1{display:inline;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-miterlimit:10;}*/
+             .st1,.st2,.st3,.st4,.st5{fill:#ffffff;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+         </style>
+         <g id="레이어_1" class="st0">
+             <rect class="st1" width="500" height="500"/>
+         </g>
+         <g id="레이어_2">
+             <circle class="st4" cx="222.5" cy="307.5" r="1"/>
+             <line class="st1" x1="200" y1="170" x2="75" y2="295"/>
+             <line class="st2" x1="75" y1="170" x2="200" y2="295"/>
+             <line class="st1" x1="425" y1="170" x2="300" y2="295"/>
+             <line class="st2" x1="300" y1="170" x2="425" y2="295"/>
+             <line class="st3" x1="240" y1="325" x2="285" y2="325"/>
+            </g>
+        </svg>
+         <div class="st5 fastlink">
+          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Blog</span><button onclick="location.href='https://blog.x-x.place/'" class="fastLinkBtn" aria-label="Blog Link"><i class="fa-solid fa-pen-nib"></i></button></div>
+          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Github</span><button onclick="location.href='//github.com/groovy-mint'" class="fastLinkBtn" aria-label="Github Link"><i class="fa-brands fa-github"></i></button></div>
+          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Twitter</span><button onclick="location.href='#'" class="fastLinkBtn" aria-label="Twitter Link"><i class="fa-brands fa-twitter"></i></button></div>
+          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Instagram</span><button onclick="location.href='//instagram.com/_D34DF4C3'" class="fastLinkBtn" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></button></div>
+        </div>
+        <hr class="st6" style="margin:20px 0;">
+        <!-- <p class="st5 p12" onclick="alert('Always Gloomy and Soggy.')">It's me, X._X</p> -->
+         <p class="st7">Scroll to see more info</p>
+         <span class="st7 material-symbols-outlined">keyboard_arrow_down</span>
           </div>
-          <hr class="st6" style="margin:20px 0;">
-          <!-- <p class="st5 p12" onclick="alert('Always Gloomy and Soggy.')">It's me, X._X</p> -->
-           <p class="st7">Scroll to see more info</p>
-                    <i class="st7 xi-angle-down"></i>
-            </div>
-        </section>
+      </section>
     </div>
     <div class="contentsBox introBox">
 		<section>
@@ -276,20 +277,20 @@ counter();
 <article class="contentsWrap">
 	<h1 class="textCenter p15">나는 이런 사람이에요</h1><hr>
 	<h2>🚃 전공은 철도</h2>
-	<p>다섯 살 때부터 지금까지 끊임없이 좋아했던 것이에요! 각 열차마다 매력이 엄청나서 제 마음을 사로잡아요. 특히나 열차가 출발하거나 도착할 때 나는 구동음을 정말 좋아해요. 지금까지도 그래서 대학 전공으로 철도를 택했어요.</p>
+	<p>공사중</p>
   <br>
 	<h2>🎨 취미는 창작</h2>
 	<div class="imageBox"><img alt="본인이 그린 그림들 9개" style="border-radius: 15px;" src="./sources/drawing.png"></div>
-	<p>어릴 때부터 무언가를 만들어내거나 그림을 그리는 것을 좋아했어요. 지금도 똑같아서 무언가를 만들거나 그림을 그려서 SNS에 올리는 일들을 즐겨 해요. 위에 직접 그린 그림을 게시하는 SNS 링크가 있으니 한 번 구경해보시는 것도 좋아요!</p>
+	<p>공사중</p>
   <br>
 	<h2>🧑‍💻 특기는 프론트엔드</h2>
-	<p>웹 디자인이나 웹앱에 관심이 있어서 웹사이트를 만들거나 웹앱을 만들어보기도 해요. 프론트엔드는 중학교 3학년때부터 해왔는데, 한 번 만들어놓으면 유지보수가 필수인 종목이라 지금까지도 놓지 않고 있어요. 그렇다고 돈 벌 수 있는 수준은 아닌 것 같아요..🥲 제가 만든 사이트는 아래에 달아놓은 3개 링크에요. 한 번 구경해보시는 것도 좋아요!</p>
-  <p><i class="xi-angle-right-min"></i> <a href="//sclab.ntws.kr"> Smile Creative Lab</a></p>
-  <p><i class="xi-angle-right-min"></i> <a href="//ntws.kr"> NTWS.KR</a></p>
-  <p><i class="xi-angle-right-min"></i> <a href="//blog.uh-2-x-x.me/"> The First Paradise</a></p>
+	<p>공사중</p>
+  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//sclab.x-x.place"> Smile Creative Lab</a></p>
+  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//rtm.kr"> RTM Place</a></p>
+  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//blog.x-x.place/"> The First Paradise</a></p>
   <br>
 	<h2>🕹️ 좋아하는 것은 닌텐도</h2>
-	<p>닌텐도 게임, 특히나 모노리스 소프트와 노가미 히사시가 맡은 게임들(젤다, 동숲, 스플래툰, etc..)을 좋아해요. 친구 코드는 언제든지 드릴 수 있어요! 어디로든 연락만 주세요!🥺</p>
+	<p>공사중</p>
 </article>
 </section>
 </div>
@@ -298,16 +299,16 @@ counter();
 <article class="contentsWrap">
 	<h1 class="textCenter p15">이런 것들은 싫어해요</h1><hr>
 	<h2>1. 원색적 비난</h2>
-	<p>아무 이유도 없이, 혹은 별로 타당한 이유같지도 않은데 서로를 헐뜯거나 타인의 결과물에 훼방을 놓는 행동은 별로 좋지 않다고 생각해요. ☹️</p>
+	<p>공사중</p>
   <br>
 	<h2>2. 두서 없는 음담패설</h2>
-	<p>갑자기 두서없이 공개적으로 음담패설 하고 그러면 못써요. 😞 우리 남사스러운 이야기는 개방되지 않은 곳에서 해요.</p>
+	<p>공사중</p>
   <br>
 	<h2>3. 지나친 강요</h2>
-	<p>저도 저만의 사는 방식이 있고, 자율적으로 살 권리가 있어요. 물론 상대방이 저에게 이해관계를 형성해준다면 따르고 존중하는데, 무작정 본인의 방식을 강요한다면 별로 따르고 싶지 않을 거예요. 😵‍💫</p>
+	<p>공사중</p>
   <br>
 	<h2>4. 목이버섯</h2>
-	<p>원래 가지무침이였는데 목이버섯으로 바뀌었어요. 목이버섯 개못생겼어 맛없어</p>
+	<p>공사중</p>
 </article>
 </section>
 </div>
@@ -317,12 +318,12 @@ counter();
     <div class="linkBox">
             <p class="p15 textCenter">링크 모음집</p>
             <hr>
-          <p><i class="xi-angle-right-min"></i> <a class="p12" href="//sclab.ntws.kr"> Smile Creative Lab</a></p>
-          <p><i class="xi-angle-right-min"></i> <a class="p12" href="//ntws.kr"> NTWS.KR</a></p>
-          <p><i class="xi-angle-right-min"></i> <a class="p12" href="//blog.x-x.place/"> The First Paradise</a></p>
-          <p><i class="xi-github"></i> <a class="p12" href="//github.com/groovy-mint"> Github</a></p>
-          <p><i class="xi-twitter"></i> <a class="p12" href="//twitter.com/D34DF4C3_X_X"> Twitter</a></p>
-          <p><i class="xi-instagram"></i> <a class="p12" href="//instagram.com/uh_2_x._x?igshid=YmMyMTA2M2Y="> Instagram</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//sclab.x-x.place"> Smile Creative Lab</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//rtm.kr"> RTM Place</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//blog.x-x.place/"> The First Paradise</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//github.com/groovy-mint"> Github</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="#"> Twitter</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//instagram.com/_D34DF4C3"> Instagram</a></p>
     </div>
   </div>
   <br><br>
@@ -332,7 +333,7 @@ counter();
 	<div class="doNotEnter" style="padding-top:25px;">
     <footer>
         <div>
-<p>X._X · 2024</p>
+            <p>X._X · 2024</p>
             <p>DO NOT FEEL ANYTHING.</p>
         </div>
         <div>
