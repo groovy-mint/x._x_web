@@ -11,11 +11,13 @@
     <style>
     		* {font-family: 'SUIT Variable', sans-serif;}
 			hr{width:100px;border: 1px solid black;margin-bottom: 35px;}
+      a{text-decoration: none;}
+      a:hover{text-decoration: underline;}
       .black{background: black;color: white;}
       .black hr{border:1px solid white}
       .top{padding-bottom:0;}
       .profilePic{border-radius:100%;}
-      .contentsBox{display:flex;justify-content:center;	word-break:keep-all;}
+      .contentsBox{display:flex;justify-content:center;align-items: center;	word-break:keep-all;}
       .contentsWrap{max-width:750px;}
       .introBox{padding: 50px 7%;}
       .doNotEnter {background: repeating-linear-gradient(45deg, #000, #000 15px, #fd0 0, #fd0 30px);}
@@ -34,12 +36,12 @@
       .fastLinkBtnName{position: absolute;bottom: 72px;text-align: center;width: 72px;opacity: 0;pointer-events: none;color: white;transition: all 0.2s;font-size: 0.7em;}
       .profileWrap{display: flex;align-items: center;justify-content: space-evenly;flex-wrap: wrap;}
       .introTable{
-        color:#000;
+        color:#fff;
         border-collapse:collapse;
       }
       .introTable tr td{padding:7px;}
       .introTable tr td:nth-child(1){
-        border-right:2px solid #000;
+        border-right:2px solid #fff;
         padding-right:10px;
         font-weight: bold;
       }
@@ -47,6 +49,34 @@
       .p2{font-size: 2em;}
       .p15{font-size: 1.5em;}
       .p12{font-size: 1.2em;}
+      .drawingBack{
+    background: url(https://raw.githubusercontent.com/groovy-mint/x._x_web/refs/heads/main/sources/back_1.png) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover cover;
+    -moz-background-size: cover cover;
+    -o-background-size: cover cover;
+    background-position: top;
+    background-position-y: -10;
+    margin: 0px;
+    justify-content: normal;
+    padding: 0;
+  color:#eeeeee;}
+  .frontendBack{
+    background: url(https://raw.githubusercontent.com/groovy-mint/x._x_web/refs/heads/main/sources/back_2.png) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover cover;
+    -moz-background-size: cover cover;
+    -o-background-size: cover cover;
+    background-position: top;
+    background-position-y: -10;
+    margin: 0px;
+    justify-content: normal;
+    padding: 0;}
+    .cover{width: 100%;background-color: rgba(0, 0, 0, 0.7);display: flex;justify-content: center;}
+    
+@media screen and (max-width:799px){
+  .p15{font-size:1.2em;}.p12{font-size:1em;}.p2{font-size: 1.8em;}.p3{font-size: 1.5em;}
+}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b78277d285.js" crossorigin="anonymous"></script>
@@ -198,26 +228,39 @@
         </div>
         <hr class="st6" style="margin:20px 0;">
         <!-- <p class="st5 p12" onclick="alert('Always Gloomy and Soggy.')">It's me, X._X</p> -->
-         <p class="st7">Scroll to see more info</p>
+         <p class="st7 textCenter">Scroll to see more info</p>
          <span class="st7 material-symbols-outlined">keyboard_arrow_down</span>
           </div>
       </section>
     </div>
+
+    <div class="contentsBox introBox black">
+      <section>
+        <article class="contentsWrap">
+          <p class="p12 textCenter">&lt; 지금부터 여러분이 Q, 제가 A. &gt;</p>
+        </article>
+      </section>
+    </div>
+
     <div class="contentsBox introBox">
+      <section>
+        <article class="contentsWrap">
+          <br><br><br>
+          <br>
+          <p class="p15 textCenter">Q</p><hr><br>
+          <p class="p3 textCenter"><b>자기소개 먼저 해주세요.</b></p><br><br>
+        </article>
+      </section>
+    </div>
+    <div class="contentsBox introBox black">
 		<section>
-      <h1 class="textCenter p15">간단 프로필</h1><hr>
-			<article class="contentsWrap profileWrap">
+      <p class="p15 textCenter">A</p><hr><br>
 			<div class="textCenter"><img alt="보라색 머리의 구름 귀걸이를 건 프로필 그림" src="./sources/profile.png" class="profilePic" width="150px" height="150px"></div>
-        <!-- <p class="p2 textCenter">어이없음</p> -->
-        <!-- <p class="p12 textCenter">[어이없음] [dedfeɪs]</p> -->
+			<article class="contentsWrap profileWrap">
       <div class="linkContainer">
         <div class="linkBox">
           <p class="p15 textCenter" style="margin-top: 0;"><b>X._X</b></p>
           <table class="introTable">
-            <tr>
-              <td>Nickname </td>
-              <td>어이없음, Uh_2_X._X</td>
-            </tr>
             <tr>
               <td>Age </td>
               <td> 20+</td>
@@ -233,8 +276,153 @@
           </table>
         </div>
       </div>
-			<!-- <p style="margin-bottom:2em;">겉은 멀쩡한데 속은 거멓게 썩어문드러진 사람. 매사에 정신을 놓고있어서 하는 일마다 제대로 되지 않는다. 성격이 상당히 내성적이고 말주변이 없어서 다른 사람들에게 쉽게 다가가지 못하는 성향을 가지고 있다. 하지만 본인 딴에 친해지고 싶은 사람이 있으면 먼저 다가가는 편.</p> -->
-</article><br><br><br><br>
+			
+  </section>
+  </div>
+
+    <div class="contentsBox introBox">
+      <section>
+        <article class="contentsWrap textCenter">
+          <p class="p15">Q</p><hr><br>
+          <p class="p12">들어가기에 앞서...</p>
+          <p class="p3"><b>도대체 이름을 어떻게 읽나요??</b></p><br><br>
+        </article>
+      </section>
+    </div>
+    <div class="contentsBox introBox black">
+      <section>
+        <article class="contentsWrap textCenter">
+          <p class="p15">A</p><hr><br>
+          <p class="p2">"X._X"</p>
+            <p class="p12"><br>그게 저를 칭하는 말이라면 어떤 말이든, 원하시는 대로 부르셔도 상관 없습니다.<br>
+            <br>어이없음, 줄여서 어없, 영어로는 Deadface를 권장합니다.
+            <br><br>
+            </p>
+        </article>
+      </section>
+    </div>
+<div class="contentsBox introBox">
+  <section>
+    <article class="contentsWrap textCenter">
+      <p class="p15">Q</p><hr><br>
+      <p class="p12">그렇다면 이제...</p>
+      <p class="p3"><b>당신은 어떤 사람인가요??</b></p><br><br>
+    </article>
+  </section>
+</div>
+<div class="contentsBox introBox black">
+  <section>
+    <article class="contentsWrap">
+      <p class="p15 textCenter">A</p><hr><br>
+      <p class="p2"><b>🚃 전공은 철도</b></p>
+      <p class="p12"><br>
+        <br>어려서부터 철도를 굉장히 좋아했습니다.<br>
+        <br>그 꿈이 현재도 계속 이어져 철도 관련 대학에 진학하여 취업 준비를 병행하고 있습니다.<br>
+        <br><br>
+        </p>
+    </article>
+  </section>
+</div>
+<div class="contentsBox drawingBack">
+  <section class="cover">
+    <article class="contentsWrap" style="padding: 50px 7%;">
+      <p class="p2"><b>🎨 취미는 창작</b></p>
+      <br>
+      <div class="imageBox"><img alt="본인이 그린 그림들 9개" style="border-radius: 15px;" src="./sources/drawing.png"></div>
+      <br>
+      <p class="p12">저에게 창작이란 숨을 쉬는 것, 그 이상이에요.<br>
+        <br>본업으로 삼기에는 부끄러운 실력이지만 제게 있어 만족스러운 결과가 나올 정도로 그립니다.<br>
+        <br>낙서부터 카툰, 아니메까지 다양하게 커버가 가능합니다.<br>
+        <br>...그림 의뢰는 DM이나 메일로 받습니다.<br>
+        <p><span class="material-symbols-outlined">chevron_right</span> <a style="background:white;" class="p12" href="//instagram.com/_D34DF4C3"> 그림 인스타그램</a></p>
+        </p>
+    </article>
+  </section>
+</div>
+<div class="contentsBox introBox black">
+  <section>
+    <article class="contentsWrap">
+      <p class="p2"><b>🧑‍💻 특기는 프론트엔드</b></p>
+      <div class="imageBox"><img alt="본인이 그린 그림들 9개" style="border-radius: 15px;" src="./sources/front_1.png"></div>
+      <p class="p12"><br>
+        <br>때는 중학교 3학년, 웹 앱에 관심이 많아서 프론트엔드를 자주 접하고 이런 생각이 떠올랐습니다.<br>
+        <br>"나만의 웹사이트를 만들어 보면 어떨까?"<br>
+        <br>스스로 HTML과 CSS를 공부하고 웹사이트를 만들었을 때의 성취감은 정말 개쩔었습니다.<br>
+        <br>그때 만든 사이트가 지금의 RTM Place이고, 현재까지도 유지보수를 끊임없이 하고있습니다.<br>
+        <br>
+        <br>이후에 담임 선생님께 자리바꾸기 프로그램도 만들어드리고,<br>방학때 짬나는 시간으로 타자연습을 만드는 등 프론트엔드를 끝까지 놓지 않았습니다.<br>
+        <br>이 사이트도 제가 직접 만들었구요.<br>
+        <br><br>제가 만든 앱들은 아래 링크에서 확인하실 수 있습니다.<br><br>
+        <p><span class="material-symbols-outlined">chevron_right</span> <a style="background:white;" class="p12" href="//sclab.x-x.place"> 자리 바꾸기 프로그램</a></p>
+        <p><span class="material-symbols-outlined">chevron_right</span> <a style="background:white;" class="p12" href="//apps.microsoft.com/detail/9mx8z8jkblms?hl=ko-KR&gl=KR"> 스마일 타자연습</a></p>
+        <p><span class="material-symbols-outlined">chevron_right</span> <a style="background:white;" class="p12" href="//rtm.x-x.place"> RTM Place</a></p>
+        <p><span class="material-symbols-outlined">chevron_right</span> <a style="background:white;" class="p12" href="//blog.x-x.place/"> The First Paradise</a></p>
+        </p>
+    </article>
+  </section>
+</div>
+<div class="contentsBox introBox">
+  <section>
+    <article class="contentsWrap textCenter">
+      <p class="p15">Q</p><hr><br>
+      <p class="p12">좋아하는 것을 들었으니..</p>
+      <p class="p3"><b>싫어하는 게 무엇인가요??</b></p>
+    </article>
+  </section>
+</div>
+<div class="doNotEnter" style="padding:25px 0;">
+<div class="contentsBox introBox black">
+<section>
+<article class="contentsWrap textCenter">
+  <p class="p15">A</p><hr><br>
+	<h2>원색적 비난</h2>
+	<p></p>
+  <br>
+	<h2>두서 없는 음담패설</h2>
+	<p></p>
+  <br>
+	<h2>지나친 강요</h2>
+	<p></p>
+  <br>
+	<h2>목이버섯</h2>
+	<p></p>
+</article>
+</section>
+</div>
+</div>
+<div class="contentsBox introBox">
+<section>
+  <div class="linkContainer">
+    <div class="linkBox">
+            <p class="p15 textCenter">링크 모음집</p>
+            <hr>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//sclab.x-x.place"> Smile Creative Lab</a></p>
+          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//rtm.kr"> RTM Place</a></p>
+          <p><i class="fa-solid fa-pen-nib"></i> <a class="p12" href="//blog.x-x.place/"> The First Paradise</a></p>
+          <p><i class="fa-brands fa-github"></i> <a class="p12" href="//github.com/groovy-mint"> Github</a></p>
+          <p><i class="fa-brands fa-twitter"></i> <a class="p12" href="#"> Twitter</a></p>
+          <p><i class="fa-brands fa-instagram"></i> <a class="p12" href="//instagram.com/_D34DF4C3"> Instagram</a></p>
+    </div>
+  </div>
+  <br><br>
+<p class="textCenter black" onclick="alert('Always Gloomy and Soggy.')" style="width:300px;user-select:none">NO MORE PASSION.</p>
+			</section>
+    </div>
+	<div class="doNotEnter" style="padding-top:25px;">
+    <footer>
+        <div>
+            <p>X._X · 2025</p>
+            <p>DO NOT FEEL ANYTHING.</p>
+        </div>
+        <div>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+<!-- <p style="margin-bottom:2em;">겉은 멀쩡한데 속은 거멓게 썩어문드러진 사람. 매사에 정신을 놓고있어서 하는 일마다 제대로 되지 않는다. 성격이 상당히 내성적이고 말주변이 없어서 다른 사람들에게 쉽게 다가가지 못하는 성향을 가지고 있다. 하지만 본인 딴에 친해지고 싶은 사람이 있으면 먼저 다가가는 편.</p> -->
+<!-- </article> -->
 <!-- </section> -->
 <!-- </div> -->
 <!-- <div class="doNotEnter" style="padding:50px 0;">
@@ -274,72 +462,3 @@ counter();
 
 <!-- <div class="contentsBox introBox"> -->
 <!-- <section> -->
-<article class="contentsWrap">
-	<h1 class="textCenter p15">나는 이런 사람이에요</h1><hr>
-	<h2>🚃 전공은 철도</h2>
-	<p>공사중</p>
-  <br>
-	<h2>🎨 취미는 창작</h2>
-	<div class="imageBox"><img alt="본인이 그린 그림들 9개" style="border-radius: 15px;" src="./sources/drawing.png"></div>
-	<p>공사중</p>
-  <br>
-	<h2>🧑‍💻 특기는 프론트엔드</h2>
-	<p>공사중</p>
-  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//sclab.x-x.place"> Smile Creative Lab</a></p>
-  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//rtm.kr"> RTM Place</a></p>
-  <p><span class="material-symbols-outlined">chevron_right</span> <a href="//blog.x-x.place/"> The First Paradise</a></p>
-  <br>
-	<h2>🕹️ 좋아하는 것은 닌텐도</h2>
-	<p>공사중</p>
-</article>
-</section>
-</div>
-<div class="contentsBox introBox black">
-<section>
-<article class="contentsWrap">
-	<h1 class="textCenter p15">이런 것들은 싫어해요</h1><hr>
-	<h2>1. 원색적 비난</h2>
-	<p>공사중</p>
-  <br>
-	<h2>2. 두서 없는 음담패설</h2>
-	<p>공사중</p>
-  <br>
-	<h2>3. 지나친 강요</h2>
-	<p>공사중</p>
-  <br>
-	<h2>4. 목이버섯</h2>
-	<p>공사중</p>
-</article>
-</section>
-</div>
-<div class="contentsBox introBox">
-<section>
-  <div class="linkContainer">
-    <div class="linkBox">
-            <p class="p15 textCenter">링크 모음집</p>
-            <hr>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//sclab.x-x.place"> Smile Creative Lab</a></p>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//rtm.kr"> RTM Place</a></p>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//blog.x-x.place/"> The First Paradise</a></p>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//github.com/groovy-mint"> Github</a></p>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="#"> Twitter</a></p>
-          <p><span class="material-symbols-outlined">chevron_right</span> <a class="p12" href="//instagram.com/_D34DF4C3"> Instagram</a></p>
-    </div>
-  </div>
-  <br><br>
-<p class="textCenter black" onclick="alert('Always Gloomy and Soggy.')" style="width:300px;user-select:none">NO MORE PASSION.</p>
-			</section>
-    </div>
-	<div class="doNotEnter" style="padding-top:25px;">
-    <footer>
-        <div>
-            <p>X._X · 2024</p>
-            <p>DO NOT FEEL ANYTHING.</p>
-        </div>
-        <div>
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-        </div>
-    </footer>
-</div>
-</body>
-</html>
