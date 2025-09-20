@@ -3,7 +3,7 @@
 <head>
     <title>It's me, X._X</title>
     <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0>
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
     <meta name="description" content="X._X's Personal website which contains some links and introdutions.">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -87,35 +87,40 @@
           <div class="titleBox">
               <style>
                   svg{width:80%;margin: 50px;margin-bottom:0;}
-                  .st1{stroke-dasharray: 500;
+                  /* 오른쪽위에서 왼쪽아래로 */
+                  .st1{stroke-dasharray: 500;  
                     stroke-dashoffset: 0;
-                    animation: dash 2s ease-in alternate 1;
+                    animation: dash 14s ease-in alternate 1;
                   }
+                  /* 왼쪽 위에서 오른쪽 아래로 */
                   .st2{stroke-dasharray: 500;
                     stroke-dashoffset: 0;
-                    animation: dash1 2s ease-in alternate 1;
+                    animation: dash1 10s ease-in alternate 1;
                   }
+                  /* 입 */
                   .st3{
                     stroke-dasharray: 500;
                     stroke-dashoffset: 0;
-                    animation: dash3 2s ease-in alternate 1;
+                    animation: dash3 6.5s ease-in alternate 1;
                   }
+                  /* 코 */
                   .st4{
                     animation: dash2 2s ease-out alternate 1;
                   }
                   .st5{
-                    animation: dash4 2.7s ease-in alternate 1;
+                    animation: dash4 2.1s ease-in alternate 1;
                   }
                   .st6{
-                    animation: dash5 2.7s ease-in alternate 1;
+                    animation: dash5 2.1s ease-in alternate 1;
                   }
                   .st7{
-                    animation: dash6 2.7s ease-in alternate 1;
+                    animation: dash6 2.1s ease-in alternate 1;
                   }
 
                   @keyframes dash {
                     from {
                       stroke-dashoffset: 500;
+                      animation-timing-function: cubic-bezier(0.1, 1, 1, 0.7);
                     }
                     to {
                       stroke-dashoffset: 0;
@@ -125,8 +130,10 @@
                     from {
                       stroke-dashoffset: 500;
                     }
-                    25%{
+                    4%{
                       stroke-dashoffset: 500;
+                      animation-timing-function: cubic-bezier(0.1, 1, 1, 0.7);
+                      animation-delay: 10s;
                     }
                     to {
                       stroke-dashoffset: 0;
@@ -136,10 +143,10 @@
                     from {
                       opacity: 0;
                     }
-                    65%{
+                    30%{
                       opacity: 0;
                     }
-                    77%{
+                    40%{
                       opacity: 1;
                     }
                     to {
@@ -150,8 +157,9 @@
                     from {
                       stroke-dashoffset: 500;
                     }
-                    80% {
+                    12% {
                       stroke-dashoffset: 500;
+                      animation-timing-function: cubic-bezier(0.8, 1, 1, 0.7);
                     }
                     to {
                       stroke-dashoffset: 0;
@@ -194,6 +202,9 @@
                     90% {
                       opacity: 0;
                     }
+                    /* 90% {
+                      opacity: 1;
+                    } */
                     to {
                       opacity: 1;
                     }
@@ -260,6 +271,10 @@
         <div class="linkBox">
           <p class="p15 textCenter" style="margin-top: 0;"><b>X._X</b></p>
           <table class="introTable">
+            <tr>
+              <td>ID </td>
+              <td> _D34DF4C3</td>
+            </tr>
             <tr>
               <td>Age </td>
               <td> 20+</td>
