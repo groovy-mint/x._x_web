@@ -10,7 +10,8 @@
 		<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet"> 
         <style>
             * {font-family: 'SUIT Variable', sans-serif;}
-            html {background-color: #ffffff;}
+            *, *::before, *::after {box-sizing: border-box;}
+            html {background-color: #ffffff;scroll-behavior: smooth;scroll-behavior: smooth;scroll-snap-type: y proximity;}
             body {background-color: #ffffff;margin: 0;}
             html, body {scrollbar-width: none; /* Firefox */-ms-overflow-style: none; /* IE, Edge */}
             html::-webkit-scrollbar, body::-webkit-scrollbar {display: none; /* Chrome, Safari, Opera */}
@@ -20,10 +21,10 @@
 /* 화면 우측에 고정되는 카멜레온 스크롤 트랙 */
 .custom-scroll-track {
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 6px;
     width: 14px; /* 클릭이 더 편하도록 트랙 클릭 영역을 살짝 넓혀줍니다 */
-    height: calc(100vh - 40px);
+    height: calc(100vh - 20px);
     z-index: 999999;
     pointer-events: auto; /* 마우스 이벤트 활성화 */
     mix-blend-mode: difference;
@@ -45,6 +46,58 @@
 .custom-scroll-thumb:active {
     cursor: grabbing; /* 쥐었을 때 손 모양 */
 }
+.sideNav {
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    mix-blend-mode: difference; /* 배경색에 맞춰 텍스트가 자동 반전 */
+    pointer-events: auto;
+}
+
+.sideNav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff !important; /* difference 적용을 위해 순수 흰색 유지 */
+    background: none !important;
+    text-decoration: none !important;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    opacity: 0.45;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* 목차 인디케이터 대시선(-) */
+.sideNav a::before {
+    content: '';
+    width: 14px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.25s ease;
+}
+
+/* 마우스 올렸을 때 살짝 강조 */
+.sideNav a:hover {
+    opacity: 1;
+}
+
+.sideNav a:hover::before {
+    width: 22px;
+}
+/* 현재 보고 있는 섹션 활성화 스타일 */
+.sideNav a.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.sideNav a.active::before {
+    width: 26px; /* 대시선이 길어지며 강조 */
+}
             .black{background: black;color: white;}
             .black hr{border:1px solid white}
             .black a{text-decoration: none; background-color: white;}
@@ -52,9 +105,9 @@
             .black a:hover{color:#aaa;}
             .top{padding-bottom:0;}
             .profilePic{border-radius:100%;}
-            .contentsBox{display:flex;justify-content:center;align-items: center;	word-break:keep-all;}
+            .contentsBox {min-height: 100vh;display: flex;justify-content: center;align-items: center;word-break: keep-all;width: 100%;position: relative;scroll-snap-align: start;}
             .contentsWrap{max-width:750px;}
-            .introBox{padding: 50px 7%;}
+            .introBox {padding: 80px 7%;}
             .albumCover{width: 200px;height: 200px;}
             .doNotEnter {background: repeating-linear-gradient(45deg, #000, #000 15px, #fd0 0, #fd0 30px);}
             .imageBox{width:100%;text-align:center;}
@@ -63,13 +116,14 @@
             .linkContainer{display:flex;	flex-direction:column;	align-items:center;margin: 30px;}
             .textCenter{text-align:center;}
             .textBold{font-weight:bold;}
-            .fastlink{font-size: 24px;display: flex;}
+            .fastlink{font-size: 24px;display: flex;justify-content: center;align-items: center;}
             .fastlink i{padding:15px;}
             .fastLinkBtnWrap{position:relative;}
-            .fastLinkBtn{font-size: 1em;border: 0;background: none;color: #fff;margin: 8px;padding: 0;border-radius: 100%;transition: all 0.2s;cursor: pointer;}
+            .fastLinkBtn{width: 48px;height: 48px;display: inline-flex;justify-content: center;align-items: center;border: 0;background: none;color: #fff;margin: 10px;padding: 0;border-radius: 100%;transition: all 0.2s;cursor: pointer;}
+            .fastLinkBtn i {font-size: 25px;width: auto;height: auto;padding: 0;line-height: 1;}
             .fastLinkBtnWrap:hover .fastLinkBtn{color:black;background: white;}
             .fastLinkBtnWrap:hover .fastLinkBtnName{opacity: 1;}
-            .fastLinkBtnName{position: absolute;bottom: 72px;text-align: center;width: 72px;opacity: 0;pointer-events: none;color: white;transition: all 0.2s;font-size: 0.7em;}
+            .fastLinkBtnName{position: absolute;bottom: 56px;left: 50%;transform: translateX(-50%); white-space: nowrap;text-align: center;opacity: 0;pointer-events: none;color: white;transition: all 0.2s ease;font-size: 0.7em;margin-bottom: 10px;}
             .profileWrap{display: flex;align-items: center;justify-content: space-evenly;flex-wrap: wrap;}
             .introTable{
               color:#fff;
@@ -109,11 +163,43 @@
             .channelChip i {font-size: 1.5em;line-height: 1;}
             @media screen and (max-width:799px){
               .p15{font-size:1.2em;}.p12{font-size:1em;}.p2{font-size: 1.8em;}.p3{font-size: 1.5em;}.custom-scroll-track {display: none;}
+              .sideNav {display: none;}
+              .contentsBox{scroll-snap-align: none;}
             }
             
         </style>
         <script>
   document.addEventListener('DOMContentLoaded', function () {
+const navLinks = document.querySelectorAll('.sideNav a');
+    const sections = document.querySelectorAll('section[id]');
+
+    const observerOptions = {
+      root: null,
+      // 화면 정중앙(위아래 40%씩 제외한 가운데 20% 지점)을 섹션이 통과할 때 활성화
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const currentId = entry.target.getAttribute('id');
+          
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${currentId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // 여기까지 네비바
+
     const thumb = document.getElementById('customThumb');
     if (!thumb) return;
 
@@ -141,7 +227,7 @@
       }
       thumb.style.display = 'block';
 
-      const thumbHeight = Math.max((winHeight / scrollHeight) * trackHeight, 40);
+      const thumbHeight = Math.max((winHeight / scrollHeight) * trackHeight, 20);
       thumb.style.height = `${thumbHeight}px`;
 
       const moveSpace = trackHeight - thumbHeight;
@@ -213,10 +299,18 @@
         <script src="https://kit.fontawesome.com/b78277d285.js" crossorigin="anonymous"></script>
     </head>
     <body>
+      <nav class="sideNav st7">
+          <a href="#top">TOP</a>
+          <a href="#discography">DISCO</a>
+          <a href="#illustration">ILLUST</a>
+          <a href="#webdesign">WEB</a>
+          <a href="#software">SOFTWARE</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
         <div class="custom-scroll-track">
           <div class="custom-scroll-thumb st7" id="customThumb"></div>
         </div>
-        <section class="contentsBox black top">
+        <section id="top" class="contentsBox black top">
           <div class="titleBox">
               <style>
                   svg{width:80%;margin: 50px;margin-bottom:0;}
@@ -392,7 +486,7 @@
          <span class="st7 material-symbols-outlined">keyboard_arrow_down</span>
           </div>
       </section>
-      <section class="contentsBox introBox">
+      <section id="discography" class="contentsBox introBox">
         <article class="contentsWrap">
           <br>
           <p class="p15 textCenter">Discography</p><hr><br>
@@ -449,7 +543,7 @@
         <br>
         </article>
       </section>
-      <section class="contentsBox introBox black">
+      <section id="illustration" class="contentsBox introBox black">
         <article>
           <br>
           <p class="p15 textCenter">Illustration</p><hr><br>
@@ -511,7 +605,7 @@
         <br>
         </article>
       </section>
-      <section class="contentsBox introBox">
+      <section id="webdesign" class="contentsBox introBox">
         <article class="contentsWrap">
           <br>
           <p class="p15 textCenter">Web Design</p><hr>
@@ -569,7 +663,7 @@
           <br>
         </article>
       </section>
-      <section class="contentsBox introBox black">
+      <section id="software" class="contentsBox introBox black">
         <article class="contentsWrap">
           <br>
           <p class="p15 textCenter">Software</p><hr>
@@ -629,16 +723,17 @@
           </p>
         </article>
       </section> -->
-      <section class="contentsBox introBox">
+      <section id="contact" class="contentsBox introBox">
         <article class="contentsWrap">
           <br>
           <p class="p15 textCenter">Contact</p><hr>
+          <p class="textBold textCenter p3">Feel free to contact.</p>
           <!-- 리슨 온 -->
           <div class="channelSection">
             <div class="channelList">
               <a class="channelChip" href="mailto:support@x-x.place" target="_blank" rel="noopener noreferrer">
                 <span class="material-symbols-outlined" style="font-size: 1.5em;">mail</span>
-                <span>E-mail</span>
+                <span>E-mail (Recommended)</span>
               </a>
               <a class="channelChip" href="//x.com/_D34DF4C3_" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-x-twitter"></i>
