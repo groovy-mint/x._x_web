@@ -36,6 +36,7 @@
             .custom-scroll-track {position: fixed;top: 10px;right: 6px;width: 14px;height: calc(100vh - 20px);z-index: 999999;pointer-events: auto;mix-blend-mode: difference;user-select: none;opacity: 0;animation: fadeInTrack 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay: 2.6s;}
             .custom-scroll-thumb {position: absolute;top: 0;left: 3px;width: 8px;background-color: #ffffff;border-radius: 999px;will-change: transform;cursor: grab;}
             .custom-scroll-thumb:active {cursor: grabbing;}
+            .scrollPlease{display: none;}
             .sideNav {position: fixed;top: 50%;left: 30px;transform: translateY(-50%);z-index: 9999;display: flex;flex-direction: column;gap: 14px;mix-blend-mode: difference;pointer-events: auto;opacity: 0;transform: translateY(-50%) translateX(-10px);animation: fadeInNav 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay: 2.6s;}
             .sideNav a {display: flex;align-items: center;gap: 10px;color: #ffffff !important;background: none !important;text-decoration: none !important;font-size: 0.85em;letter-spacing: 0.05em;opacity: 0.45;transition: opacity 0.25s ease, transform 0.25s ease;}
             .sideNav a::before {content: '';width: 14px;height: 2px;background-color: #ffffff;transition: width 0.25s ease;}
@@ -118,6 +119,7 @@
               .p15{font-size:1.2em;}.p12{font-size:1em;}.p2{font-size: 1.8em;}.p3{font-size: 1.5em;}.custom-scroll-track {display: none;}
               .sideNav {display: none;}
               .contentsBox{scroll-snap-align: none;}
+              .scrollPlease{display: block;}
             }
             
         </style>
@@ -343,16 +345,18 @@
                 </g>
               </svg>
 
-         <div class="st5 fastlink">
-          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Blog</span><button onclick="location.href='https://blog.x-x.place/'" class="fastLinkBtn" aria-label="Blog Link"><i class="fa-solid fa-pen-nib"></i></button></div>
-          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Github</span><button onclick="location.href='//github.com/groovy-mint'" class="fastLinkBtn" aria-label="Github Link"><i class="fa-brands fa-github"></i></button></div>
-          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">X</span><button onclick="location.href='//x.com/_D34DF4C3_'" class="fastLinkBtn" aria-label="Twitter Link"><i class="fa-brands fa-x-twitter"></i></button></div>
-          <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Instagram</span><button onclick="location.href='//instagram.com/_D34DF4C3'" class="fastLinkBtn" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></button></div>
-        </div>
-        <hr class="st6" style="margin:20px 0;">
-        <!-- <p class="st5 p12" onclick="alert('Always Gloomy and Soggy.')">It's me, X._X</p> -->
-         <p class="st7 textCenter">Scroll to see more info</p>
-         <span class="st7 material-symbols-outlined">keyboard_arrow_down</span>
+          <!--<div class="st5 fastlink">
+                <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Blog</span><button onclick="location.href='https://blog.x-x.place/'" class="fastLinkBtn" aria-label="Blog Link"><i class="fa-solid fa-pen-nib"></i></button></div>
+                <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Github</span><button onclick="location.href='//github.com/groovy-mint'" class="fastLinkBtn" aria-label="Github Link"><i class="fa-brands fa-github"></i></button></div>
+                <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">X</span><button onclick="location.href='//x.com/_D34DF4C3_'" class="fastLinkBtn" aria-label="Twitter Link"><i class="fa-brands fa-x-twitter"></i></button></div>
+                <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Instagram</span><button onclick="location.href='//instagram.com/_D34DF4C3'" class="fastLinkBtn" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></button></div>
+              </div>
+              <hr class="st6" style="margin:20px 0;"> -->
+              <!-- <p class="st5 p12" onclick="alert('Always Gloomy and Soggy.')">"It's me, X._X"</p> -->
+            <div class="textCenter scrollPlease">
+              <p class="st5 textCenter">Scroll to see more info</p>
+              <span class="st6 material-symbols-outlined">keyboard_arrow_down</span>
+            </div>
           </div>
       </section>
       <section id="discography" class="contentsBox introBox">
