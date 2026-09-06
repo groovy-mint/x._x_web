@@ -33,10 +33,10 @@
 			      hr{width:100px;border: 1px solid black;margin-bottom: 35px;}
             a{text-decoration: none;}
             a:hover{color:#aaa;}
-            .custom-scroll-track {position: fixed;top: 10px;right: 6px;width: 14px;height: calc(100vh - 20px);z-index: 999999;pointer-events: auto;mix-blend-mode: difference;user-select: none;}
+            .custom-scroll-track {position: fixed;top: 10px;right: 6px;width: 14px;height: calc(100vh - 20px);z-index: 999999;pointer-events: auto;mix-blend-mode: difference;user-select: none;opacity: 0;animation: fadeInTrack 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay: 2.6s;}
             .custom-scroll-thumb {position: absolute;top: 0;left: 3px;width: 8px;background-color: #ffffff;border-radius: 999px;will-change: transform;cursor: grab;}
             .custom-scroll-thumb:active {cursor: grabbing;}
-            .sideNav {position: fixed;top: 50%;left: 30px;transform: translateY(-50%);z-index: 9999;display: flex;flex-direction: column;gap: 14px;mix-blend-mode: difference;pointer-events: auto;}
+            .sideNav {position: fixed;top: 50%;left: 30px;transform: translateY(-50%);z-index: 9999;display: flex;flex-direction: column;gap: 14px;mix-blend-mode: difference;pointer-events: auto;opacity: 0;transform: translateY(-50%) translateX(-10px);animation: fadeInNav 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay: 2.6s;}
             .sideNav a {display: flex;align-items: center;gap: 10px;color: #ffffff !important;background: none !important;text-decoration: none !important;font-size: 0.85em;letter-spacing: 0.05em;opacity: 0.45;transition: opacity 0.25s ease, transform 0.25s ease;}
             .sideNav a::before {content: '';width: 14px;height: 2px;background-color: #ffffff;transition: width 0.25s ease;}
             .sideNav a:hover {opacity: 1;}
@@ -71,16 +71,9 @@
             .fastLinkBtnWrap:hover .fastLinkBtnName{opacity: 1;}
             .fastLinkBtnName{position: absolute;bottom: 56px;left: 50%;transform: translateX(-50%); white-space: nowrap;text-align: center;opacity: 0;pointer-events: none;color: white;transition: all 0.2s ease;font-size: 0.7em;margin-bottom: 10px;}
             .profileWrap{display: flex;align-items: center;justify-content: space-evenly;flex-wrap: wrap;}
-            .introTable{
-              color:#fff;
-              border-collapse:collapse;
-            }
+            .introTable{color:#fff;border-collapse:collapse;}
             .introTable tr td{padding:7px;}
-            .introTable tr td:nth-child(1){
-              border-right:2px solid #fff;
-              padding-right:10px;
-              font-weight: bold;
-            }
+            .introTable tr td:nth-child(1){border-right:2px solid #fff;padding-right:10px;font-weight: bold;}
             .p3{font-size:3em;}
             .p2{font-size: 2em;}
             .p15{font-size: 1.5em;}
@@ -108,6 +101,19 @@
             .introBox.black .channelChip:hover {background-color: #fff !important;color: #111 !important;border-color: #fff;}
             .channelChip i {font-size: 1.5em;line-height: 1;}
             footer{background: black;display: flex;padding: 30px 30px;justify-content: space-between;align-items: center;color: #fff;}
+            @keyframes fadeInNav {
+              to {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0);
+              }
+            }
+
+            /* 스크롤바 트랙 페이드인 */
+            @keyframes fadeInTrack {
+              to {
+                opacity: 1;
+              }
+            }
             @media screen and (max-width:799px){
               .p15{font-size:1.2em;}.p12{font-size:1em;}.p2{font-size: 1.8em;}.p3{font-size: 1.5em;}.custom-scroll-track {display: none;}
               .sideNav {display: none;}
@@ -246,7 +252,7 @@
         <script src="https://kit.fontawesome.com/b78277d285.js" crossorigin="anonymous"></script>
     </head>
     <body>
-      <nav class="sideNav st7">
+      <nav class="sideNav">
           <a href="#top">TOP</a>
           <a href="#discography">DISCO</a>
           <a href="#illustration">ILLUST</a>
@@ -255,172 +261,88 @@
           <a href="#contact">CONTACT</a>
         </nav>
         <div class="custom-scroll-track">
-          <div class="custom-scroll-thumb st7" id="customThumb"></div>
+          <div class="custom-scroll-thumb" id="customThumb"></div>
         </div>
         <section id="top" class="contentsBox black top">
           <div class="titleBox">
               <style>
-                  svg{width:80%;margin: 50px;margin-bottom:0;}
-                  /* 오른쪽위에서 왼쪽아래로 */
-                  .st1{stroke-dasharray: 500;  
-                    stroke-dashoffset: 0;
-                    animation: dash 14s ease-in alternate 1;
-                  }
-                  /* 왼쪽 위에서 오른쪽 아래로 */
-                  .st2{stroke-dasharray: 500;
-                    stroke-dashoffset: 0;
-                    animation: dash1 10s ease-in alternate 1;
-                  }
-                  /* 입 */
-                  .st3{
-                    stroke-dasharray: 500;
-                    stroke-dashoffset: 0;
-                    animation: dash3 6.5s ease-in alternate 1;
-                  }
-                  /* 코 */
-                  .st4{
-                    animation: dash2 2s ease-out alternate 1;
-                  }
-                  .st5{
-                    animation: dash4 2.1s ease-in alternate 1;
-                  }
-                  .st6{
-                    animation: dash5 2.1s ease-in alternate 1;
-                  }
-                  .st7{
-                    animation: dash6 2.1s ease-in alternate 1;
-                  }
-                  .st8{
-                    animation: dash7 2.1s ease-in alternate 1;
-                  }
+                  svg {width: 90%;max-width: 480px;margin: 30px auto 0 auto;display: block;}
 
-                  @keyframes dash {
-                    from {
-                      stroke-dashoffset: 500;
-                      animation-timing-function: cubic-bezier(0.1, 1, 1, 0.7);
-                    }
+                  /* 선 드로잉 기본 공통 속성 */
+                  .st1, .st2, .st3 {stroke-dasharray: 200;stroke-dashoffset: 200;animation-fill-mode: forwards;animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);}
+
+                  /* 점(.) 기본 숨김 */
+                  .st4 {opacity: 0;transform-origin: 222.5px 307.5px;animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;animation-delay: 1.0s; /* 왼쪽 눈 완성 후 바로 등장 */}
+                  /* 1. 왼쪽 눈 (\) */
+                  .eye-left-1 {animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;animation-delay: 0.2s;}
+                  /* 2. 왼쪽 눈 (/) 교차 */
+                  .eye-left-2 {animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;animation-delay: 0.6s;}
+
+                  /* 3. 코/입 밑줄 (_) */
+                  .mouth-line {animation: drawLine 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;animation-delay: 1.3s;}
+
+                  /* 4. 오른쪽 눈 (\) */
+                  .eye-right-1 {animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;animation-delay: 1.7s;}
+                  /* 5. 오른쪽 눈 (/) 교차 */
+                  .eye-right-2 {animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;animation-delay: 2.1s;}
+
+                  /* 하단 버튼 및 텍스트 순차 페이드인 */
+                  .st5, .st6, .st7 {opacity: 0;transform: translateY(8px);animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;}
+                  .st5 { animation-delay: 2.6s; } /* 링크 버튼들 */
+                  .st6 { animation-delay: 2.8s; } /* 구분선 hr */
+                  .st7 { animation-delay: 3.0s; } /* 스크롤 안내 문구 & 화살표 */
+
+                  /* 드로잉 키프레임 */
+                  @keyframes drawLine {
                     to {
                       stroke-dashoffset: 0;
                     }
                   }
-                  @keyframes dash1 {
-                    from {
-                      stroke-dashoffset: 500;
-                    }
-                    4%{
-                      stroke-dashoffset: 500;
-                      animation-timing-function: cubic-bezier(0.1, 1, 1, 0.7);
-                      animation-delay: 10s;
-                    }
-                    to {
-                      stroke-dashoffset: 0;
-                    }
-                  }
-                  @keyframes dash2 {
-                    from {
+                
+                  /* 점 톡 찍히는 팝업 모션 */
+                  @keyframes popIn {
+                    0% {
                       opacity: 0;
-                    }
-                    30%{
-                      opacity: 0;
-                    }
-                    40%{
-                      opacity: 1;
-                    }
-                    to {
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes dash3 {
-                    from {
-                      stroke-dashoffset: 500;
-                    }
-                    12% {
-                      stroke-dashoffset: 500;
-                      animation-timing-function: cubic-bezier(0.8, 1, 1, 0.7);
-                    }
-                    to {
-                      stroke-dashoffset: 0;
-                    }
-                  }
-                  @keyframes dash4 {
-                    from {
-                      opacity: 0;
-                    }
-                    60% {
-                      opacity: 0;
+                      transform: scale(0);
                     }
                     70% {
                       opacity: 1;
+                      transform: scale(1);
                     }
-                    to {
+                    100% {
                       opacity: 1;
-                    }
-
-                  }
-                  @keyframes dash5 {
-                    from {
-                      opacity: 0;
-                    }
-                    70% {
-                      opacity: 0;
-                    }
-                    80% {
-                      opacity: 1;
-                    }
-                    to {
-                      opacity: 1;
-                    }
-
-                  }
-                  @keyframes dash6 {
-                    from {
-                      opacity: 0;
-                    }
-                    80% {
-                      opacity: 0;
-                    }
-                    90% {
-                      opacity: 1;
-                    }
-                    to {
-                      opacity: 1;
-                    }
-                }
-                    @keyframes dash7 {
-                    from {
-                      opacity: 0;
-                    }
-                    90% {
-                      opacity: 0;
-                    }
-                    /* 90% {
-                      opacity: 1;
-                    } */
-                    to {
-                      opacity: 1;
+                      transform: scale(1);
                     }
                   }
-                  .material-symbols-outlined{font-size:1em;}
+                
+                  /* 페이드인 + 살짝 떠오르는 모션 */
+                  @keyframes fadeInUp {
+                    to {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                
+                  .material-symbols-outlined { font-size: 1em; }
               </style>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
-         <style type="text/css">
-             .st0{display:none;}
-             /*.st1{display:inline;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-miterlimit:10;}*/
-             .st1,.st2,.st3,.st4,.st5{fill:#ffffff;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
-         </style>
-         <g id="레이어_1" class="st0">
-             <rect class="st1" width="500" height="500"/>
-         </g>
-         <g id="레이어_2">
-             <circle class="st4" cx="222.5" cy="307.5" r="1"/>
-             <line class="st1" x1="200" y1="170" x2="75" y2="295"/>
-             <line class="st2" x1="75" y1="170" x2="200" y2="295"/>
-             <line class="st1" x1="425" y1="170" x2="300" y2="295"/>
-             <line class="st2" x1="300" y1="170" x2="425" y2="295"/>
-             <line class="st3" x1="240" y1="325" x2="285" y2="325"/>
-            </g>
-        </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+                <g fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10">
+                  <!-- 왼쪽 눈 (X) -->
+                  <line class="st1 eye-left-1" x1="75" y1="170" x2="200" y2="295"/>
+                  <line class="st2 eye-left-2" x1="200" y1="170" x2="75" y2="295"/>
+                
+                  <!-- 가운데 점 (.) -->
+                  <circle class="st4" cx="222.5" cy="307.5" r="1.5"/>
+                
+                  <!-- 입/밑줄 (_) -->
+                  <line class="st3 mouth-line" x1="240" y1="325" x2="285" y2="325"/>
+                
+                  <!-- 오른쪽 눈 (X) -->
+                  <line class="st1 eye-right-1" x1="300" y1="170" x2="425" y2="295"/>
+                  <line class="st2 eye-right-2" x1="425" y1="170" x2="300" y2="295"/>
+                </g>
+              </svg>
+
          <div class="st5 fastlink">
           <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Blog</span><button onclick="location.href='https://blog.x-x.place/'" class="fastLinkBtn" aria-label="Blog Link"><i class="fa-solid fa-pen-nib"></i></button></div>
           <div class="fastLinkBtnWrap"><span class="fastLinkBtnName">Github</span><button onclick="location.href='//github.com/groovy-mint'" class="fastLinkBtn" aria-label="Github Link"><i class="fa-brands fa-github"></i></button></div>
